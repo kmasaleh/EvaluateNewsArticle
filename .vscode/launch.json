@@ -9,13 +9,6 @@
             "name": "Run npm start",
             "request": "launch",
             "type": "node-terminal"
-        },
-        {
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
         }
     ]
 }
