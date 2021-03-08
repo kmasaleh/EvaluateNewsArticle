@@ -92,7 +92,7 @@ export class App {
         //Push it to the Server.
         const init = {
             method: 'POST',
-            credintials : 'same-origin',
+//            credintials : 'same-origin',
             headers: {'content-type':'application/json'},
             body:JSON.stringify(payload)
         };

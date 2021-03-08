@@ -70,6 +70,9 @@ module.exports = {
     ],
     devServer : {
         port : 1234,
+        proxy: {
+            '/api': 'http://localhost:8080'
+        },
         contentBase: path.join(__dirname,'dist')
     }
 }

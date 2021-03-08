@@ -2,9 +2,10 @@ var path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+const cors = require('cors');
 
 let  meaningCloud   = require('./meaning-cloud');
+app.use(cors());
 app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
