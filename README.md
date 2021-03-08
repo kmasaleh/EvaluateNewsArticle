@@ -1,6 +1,6 @@
 # Evaluate News Article using NLP Project
 Udacity Advanced Frontend Development Nano Degree
-### Author : Khaaled Saleh  
+### Author : Khaled Saleh  
 ###  Date:   08/03/2021  
 
 ### ___________________________________________ 
