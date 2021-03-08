@@ -1,4 +1,4 @@
-import {App,bootStrap} from './../src/client/js/app';
+import {App} from './../src/client/js/app';
 var fs = require('fs');
 const path = require('path');
 const jsdom = require("jsdom");
