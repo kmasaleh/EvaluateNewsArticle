@@ -13,6 +13,12 @@ export class App {
         this.urlErrorMsg = document.querySelector('#url-validation');
         this.resultDiv = document.getElementsByClassName('results-container')[0];
         this.loader = document.getElementsByClassName('loader')[0];
+        
+        this.score = document.querySelector('#score .tagValue');
+        this.agreement = document.querySelector('#agreement .tagValue');
+        this.subjectivity = document.querySelector('#subjectivity .tagValue');
+        this.confidence =  document.querySelector('#confidence .tagValue');
+        this.irony = document.querySelector('#irony .tagValue');
 
         let That =this;
         this.submitButton.addEventListener('click',function(){
@@ -95,12 +101,42 @@ export class App {
         .then(response=>  response.text())
         .then(data=>{
                 let object  = JSON.parse(data);
+                let tagsInfo = {
+                    score:object.score_tag,
+                    agreement:object.agreement,
+                    subjectivity:object.subjectivity,
+                    confidence:object.confidence,
+                    irony:object.irony
+                }
+                this.updateTags(tagsInfo);
+
+                
+/*
+"score_tag":"NEU",
+"agreement":"DISAGREEMENT",
+"subjectivity":"SUBJECTIVE",
+"confidence":"86",
+"irony":"NONIRONIC",
+*/
+
+                
+                
+                
+                
+                
                 let json = JSON.stringify(object,null,2);
                 this.resultDiv.style.display ='block';
                 document.getElementById("json").innerHTML = json;  
                 this.loader.style.display ='none';
             })
-  
+    }
+
+    updateTags(info){
+        this.score.innerHTML = info.score;
+        this.agreement.innerHTML =info.agreement ;
+        this.subjectivity.innerHTML = info.subjectivity;
+        this.confidence.innerHTML = info.confidence;
+        this.irony.innerHTML = info.irony;
     }
 }
 
